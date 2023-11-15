@@ -14,6 +14,34 @@ function api_v1_login_create(payload) {
 function api_v1_signup_create(payload) {
   return vybenetworkingmocAPI.post(`/api/v1/signup/`, payload)
 }
+function modules_terms_and_conditions_list(payload) {
+  return vybenetworkingmocAPI.get(`/modules/terms-and-conditions/`)
+}
+function modules_terms_and_conditions_create(payload) {
+  return vybenetworkingmocAPI.post(`/modules/terms-and-conditions/`, payload)
+}
+function modules_terms_and_conditions_retrieve(payload) {
+  return vybenetworkingmocAPI.get(
+    `/modules/terms-and-conditions/${payload.id}/`
+  )
+}
+function modules_terms_and_conditions_update(payload) {
+  return vybenetworkingmocAPI.put(
+    `/modules/terms-and-conditions/${payload.id}/`,
+    payload
+  )
+}
+function modules_terms_and_conditions_partial_update(payload) {
+  return vybenetworkingmocAPI.patch(
+    `/modules/terms-and-conditions/${payload.id}/`,
+    payload
+  )
+}
+function modules_terms_and_conditions_destroy(payload) {
+  return vybenetworkingmocAPI.delete(
+    `/modules/terms-and-conditions/${payload.id}/`
+  )
+}
 function rest_auth_login_create(payload) {
   return vybenetworkingmocAPI.post(`/rest-auth/login/`, payload)
 }
@@ -60,6 +88,12 @@ export const apiService = {
   api_docs_schema_retrieve,
   api_v1_login_create,
   api_v1_signup_create,
+  modules_terms_and_conditions_list,
+  modules_terms_and_conditions_create,
+  modules_terms_and_conditions_retrieve,
+  modules_terms_and_conditions_update,
+  modules_terms_and_conditions_partial_update,
+  modules_terms_and_conditions_destroy,
   rest_auth_login_create,
   rest_auth_logout_create,
   rest_auth_password_change_create,
